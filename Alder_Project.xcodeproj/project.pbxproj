@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		951FC9C520C0E693009F4495 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951FC9C420C0E693009F4495 /* NetworkController.swift */; };
+		951FC9C720C0E6C4009F4495 /* ImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951FC9C620C0E6C4009F4495 /* ImageController.swift */; };
+		951FC9CB20C0EA5C009F4495 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951FC9CA20C0EA5C009F4495 /* CoreDataStack.swift */; };
 		95560DAF20C0E31B00B0ECBF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95560DAE20C0E31B00B0ECBF /* AppDelegate.swift */; };
-		95560DB120C0E31B00B0ECBF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95560DB020C0E31B00B0ECBF /* ViewController.swift */; };
 		95560DB420C0E31B00B0ECBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95560DB220C0E31B00B0ECBF /* Main.storyboard */; };
 		95560DB720C0E31B00B0ECBF /* Alder_Project.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 95560DB520C0E31B00B0ECBF /* Alder_Project.xcdatamodeld */; };
 		95560DB920C0E31D00B0ECBF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95560DB820C0E31D00B0ECBF /* Assets.xcassets */; };
@@ -16,9 +18,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		951FC9C420C0E693009F4495 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
+		951FC9C620C0E6C4009F4495 /* ImageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageController.swift; sourceTree = "<group>"; };
+		951FC9CA20C0EA5C009F4495 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		95560DAB20C0E31A00B0ECBF /* Alder_Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alder_Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95560DAE20C0E31B00B0ECBF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		95560DB020C0E31B00B0ECBF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		95560DB320C0E31B00B0ECBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		95560DB620C0E31B00B0ECBF /* Alder_Project.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Alder_Project.xcdatamodel; sourceTree = "<group>"; };
 		95560DB820C0E31D00B0ECBF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -37,10 +41,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		951FC9C320C0E58F009F4495 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				95560DB820C0E31D00B0ECBF /* Assets.xcassets */,
+				95560DBA20C0E31D00B0ECBF /* LaunchScreen.storyboard */,
+				95560DBD20C0E31D00B0ECBF /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		951FC9C820C0E700009F4495 /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				951FC9C420C0E693009F4495 /* NetworkController.swift */,
+				951FC9C620C0E6C4009F4495 /* ImageController.swift */,
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		951FC9C920C0EA44009F4495 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				95560DB520C0E31B00B0ECBF /* Alder_Project.xcdatamodeld */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		951FC9CC20C0EA60009F4495 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				951FC9CA20C0EA5C009F4495 /* CoreDataStack.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		95560DA220C0E31A00B0ECBF = {
 			isa = PBXGroup;
 			children = (
 				95560DAD20C0E31A00B0ECBF /* Alder_Project */,
+				951FC9C320C0E58F009F4495 /* Resources */,
 				95560DAC20C0E31A00B0ECBF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,13 +96,11 @@
 		95560DAD20C0E31A00B0ECBF /* Alder_Project */ = {
 			isa = PBXGroup;
 			children = (
-				95560DAE20C0E31B00B0ECBF /* AppDelegate.swift */,
-				95560DB020C0E31B00B0ECBF /* ViewController.swift */,
 				95560DB220C0E31B00B0ECBF /* Main.storyboard */,
-				95560DB820C0E31D00B0ECBF /* Assets.xcassets */,
-				95560DBA20C0E31D00B0ECBF /* LaunchScreen.storyboard */,
-				95560DBD20C0E31D00B0ECBF /* Info.plist */,
-				95560DB520C0E31B00B0ECBF /* Alder_Project.xcdatamodeld */,
+				95560DAE20C0E31B00B0ECBF /* AppDelegate.swift */,
+				951FC9C920C0EA44009F4495 /* Model */,
+				951FC9CC20C0EA60009F4495 /* CoreData */,
+				951FC9C820C0E700009F4495 /* NetworkManager */,
 			);
 			path = Alder_Project;
 			sourceTree = "<group>";
@@ -138,9 +176,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95560DB120C0E31B00B0ECBF /* ViewController.swift in Sources */,
+				951FC9CB20C0EA5C009F4495 /* CoreDataStack.swift in Sources */,
+				951FC9C520C0E693009F4495 /* NetworkController.swift in Sources */,
 				95560DB720C0E31B00B0ECBF /* Alder_Project.xcdatamodeld in Sources */,
 				95560DAF20C0E31B00B0ECBF /* AppDelegate.swift in Sources */,
+				951FC9C720C0E6C4009F4495 /* ImageController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
