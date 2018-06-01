@@ -10,17 +10,25 @@
 		951FC9C520C0E693009F4495 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951FC9C420C0E693009F4495 /* NetworkController.swift */; };
 		951FC9C720C0E6C4009F4495 /* ImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951FC9C620C0E6C4009F4495 /* ImageController.swift */; };
 		951FC9CB20C0EA5C009F4495 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951FC9CA20C0EA5C009F4495 /* CoreDataStack.swift */; };
+		951FC9D220C0EE4B009F4495 /* CharacterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951FC9D120C0EE4B009F4495 /* CharacterController.swift */; };
+		951FC9D420C0F5B7009F4495 /* CharactersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951FC9D320C0F5B7009F4495 /* CharactersTableViewController.swift */; };
+		951FC9D720C0F5DA009F4495 /* CharacterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951FC9D620C0F5DA009F4495 /* CharacterTableViewCell.swift */; };
 		95560DAF20C0E31B00B0ECBF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95560DAE20C0E31B00B0ECBF /* AppDelegate.swift */; };
 		95560DB420C0E31B00B0ECBF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95560DB220C0E31B00B0ECBF /* Main.storyboard */; };
 		95560DB720C0E31B00B0ECBF /* Alder_Project.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 95560DB520C0E31B00B0ECBF /* Alder_Project.xcdatamodeld */; };
 		95560DB920C0E31D00B0ECBF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95560DB820C0E31D00B0ECBF /* Assets.xcassets */; };
 		95560DBC20C0E31D00B0ECBF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95560DBA20C0E31D00B0ECBF /* LaunchScreen.storyboard */; };
+		95D4810E20C13072003908E0 /* Characters+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D4810D20C13072003908E0 /* Characters+Convenience.swift */; };
+		95D4811220C137AA003908E0 /* CharacterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D4811120C137AA003908E0 /* CharacterDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		951FC9C420C0E693009F4495 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		951FC9C620C0E6C4009F4495 /* ImageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageController.swift; sourceTree = "<group>"; };
 		951FC9CA20C0EA5C009F4495 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		951FC9D120C0EE4B009F4495 /* CharacterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterController.swift; sourceTree = "<group>"; };
+		951FC9D320C0F5B7009F4495 /* CharactersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersTableViewController.swift; sourceTree = "<group>"; };
+		951FC9D620C0F5DA009F4495 /* CharacterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterTableViewCell.swift; sourceTree = "<group>"; };
 		95560DAB20C0E31A00B0ECBF /* Alder_Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alder_Project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95560DAE20C0E31B00B0ECBF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95560DB320C0E31B00B0ECBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -28,6 +36,8 @@
 		95560DB820C0E31D00B0ECBF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		95560DBB20C0E31D00B0ECBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		95560DBD20C0E31D00B0ECBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95D4810D20C13072003908E0 /* Characters+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Characters+Convenience.swift"; sourceTree = "<group>"; };
+		95D4811120C137AA003908E0 /* CharacterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +74,8 @@
 			isa = PBXGroup;
 			children = (
 				95560DB520C0E31B00B0ECBF /* Alder_Project.xcdatamodeld */,
+				951FC9D120C0EE4B009F4495 /* CharacterController.swift */,
+				95D4810D20C13072003908E0 /* Characters+Convenience.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -74,6 +86,23 @@
 				951FC9CA20C0EA5C009F4495 /* CoreDataStack.swift */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		951FC9D520C0F5BB009F4495 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				951FC9D320C0F5B7009F4495 /* CharactersTableViewController.swift */,
+				95D4811120C137AA003908E0 /* CharacterDetailViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		951FC9D820C0F5DD009F4495 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				951FC9D620C0F5DA009F4495 /* CharacterTableViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		95560DA220C0E31A00B0ECBF = {
@@ -98,7 +127,9 @@
 			children = (
 				95560DB220C0E31B00B0ECBF /* Main.storyboard */,
 				95560DAE20C0E31B00B0ECBF /* AppDelegate.swift */,
+				951FC9D520C0F5BB009F4495 /* ViewControllers */,
 				951FC9C920C0EA44009F4495 /* Model */,
+				951FC9D820C0F5DD009F4495 /* Views */,
 				951FC9CC20C0EA60009F4495 /* CoreData */,
 				951FC9C820C0E700009F4495 /* NetworkManager */,
 			);
@@ -178,7 +209,12 @@
 			files = (
 				951FC9CB20C0EA5C009F4495 /* CoreDataStack.swift in Sources */,
 				951FC9C520C0E693009F4495 /* NetworkController.swift in Sources */,
+				951FC9D720C0F5DA009F4495 /* CharacterTableViewCell.swift in Sources */,
+				95D4810E20C13072003908E0 /* Characters+Convenience.swift in Sources */,
 				95560DB720C0E31B00B0ECBF /* Alder_Project.xcdatamodeld in Sources */,
+				95D4811220C137AA003908E0 /* CharacterDetailViewController.swift in Sources */,
+				951FC9D220C0EE4B009F4495 /* CharacterController.swift in Sources */,
+				951FC9D420C0F5B7009F4495 /* CharactersTableViewController.swift in Sources */,
 				95560DAF20C0E31B00B0ECBF /* AppDelegate.swift in Sources */,
 				951FC9C720C0E6C4009F4495 /* ImageController.swift in Sources */,
 			);
@@ -326,7 +362,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H9L7P6ZCN6;
-				INFOPLIST_FILE = Alder_Project/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -344,7 +380,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = H9L7P6ZCN6;
-				INFOPLIST_FILE = Alder_Project/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
