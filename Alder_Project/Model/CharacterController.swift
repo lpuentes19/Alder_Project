@@ -19,7 +19,6 @@ class CharacterController {
     
     let baseURL: URL? = URL(string: "https://starwarstest16.herokuapp.com/api/characters")
     
-
     func fetchCharacters(completion: @escaping ([Characters]) -> Void) {
         
         guard let url = baseURL else { return }
@@ -63,11 +62,3 @@ class CharacterController {
         (try? CoreDataStack.context.save())
     }
 }
-
-
-
-
-
-
-
-

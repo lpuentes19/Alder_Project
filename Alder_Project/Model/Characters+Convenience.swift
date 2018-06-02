@@ -41,7 +41,7 @@ extension Characters {
         
         self.init(firstName: firstName, lastName: lastName, birthdate: birthdate, imageURL: imageURL, forceSensitive: forceSensitive, affiliation: affiliation)
         
-        // Saving the data we receive to Core Data
-        CharacterController.shared.saveToPersistentStorage()
+        // Creating objects and saving the data we receive to Core Data
+        CharacterController.shared.createCharacters(firstName: firstName, lastName: lastName, birthdate: birthdate, imageURL: imageURL, forceSensitive: forceSensitive, affiliation: affiliation)
     }
 }

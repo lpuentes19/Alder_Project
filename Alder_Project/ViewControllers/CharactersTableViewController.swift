@@ -11,6 +11,9 @@ import SDWebImage
 
 class CharactersTableViewController: UITableViewController {
 
+    // Stored the cellIdentifier in a constant
+    fileprivate let cellIdentifier = "characterCell"
+    
     // This was a property used to take in and display the content recieved from the server
     var characters = [Characters?]() {
         didSet {
@@ -46,7 +49,7 @@ class CharactersTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "characterCell", for: indexPath) as? CharacterTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? CharacterTableViewCell else { return UITableViewCell() }
         
         let character = CharacterController.shared.characters[indexPath.row]
         
