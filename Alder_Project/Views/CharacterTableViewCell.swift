@@ -17,7 +17,6 @@ class CharacterTableViewCell: UITableViewCell {
         guard let firstName = character.firstName,
             let lastName = character.lastName else { return }
         
-        self.nameLabel.text = "\(firstName) \(lastName)"
-        self.characterImage.image = nil
+        nameLabel.text = "\(firstName) \(lastName)"
     }
 }

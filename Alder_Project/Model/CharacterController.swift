@@ -41,12 +41,24 @@ class CharacterController {
             }
         }
     }
-    
+    // Create and save the object to the NSManaged Object Context
+    func createCharacters(firstName: String, lastName: String, birthdate: String, imageURL: String, forceSensitive: Bool, affiliation: String) {
+        let _ = Characters(firstName: firstName, lastName: lastName, birthdate: birthdate, imageURL: imageURL, forceSensitive: forceSensitive, affiliation: affiliation)
+        saveToPersistentStorage()
+    }
+    // Deleting the object from the persistent store and saving the changes
+    func delete(character: Characters) {
+        let moc = CoreDataStack.context
+        moc.delete(character)
+        
+        saveToPersistentStorage()
+    }
+    // Fetching the saved objects from the persistent store
     func fetchIndividuals() -> [Characters] {
         let request: NSFetchRequest<Characters> = Characters.fetchRequest()
         return (try? CoreDataStack.context.fetch(request)) ?? []
     }
-    
+    // Saving the objects and storing them in a persistent store
     func saveToPersistentStorage() {
         (try? CoreDataStack.context.save())
     }

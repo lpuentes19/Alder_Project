@@ -25,6 +25,12 @@ class CharacterDetailViewController: UIViewController {
         }
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        update()
+    }
+    
     func update() {
         guard let character = character,
             let firstName = character.firstName,
@@ -32,27 +38,18 @@ class CharacterDetailViewController: UIViewController {
             let birthdate = character.birthdate,
             let affiliation = character.affiliation else { return }
         
-        characterImage.image = nil
         nameLabel.text = "\(firstName) \(lastName)"
         birthdateLabel.text = "Birthdate: \(birthdate)"
         forceSensitiveLabel.text = "Force Sensitive: \(character.forceSensitive)"
         affiliationLabel.text = "Affiliation: \(affiliation)"
         
-        getImage(for: character) { (image) in
+        if let imageURL = character.profilePicture {
             DispatchQueue.main.async {
-                self.characterImage.image = image
+                self.characterImage.sd_setImage(with: URL(string: imageURL))
+                self.characterImage.layer.masksToBounds = false
+                self.characterImage.layer.cornerRadius = 5
+                self.characterImage.clipsToBounds = true
             }
         }
-    }
-    
-    func getImage(for character: Characters, completion: @escaping (UIImage?) -> Void) {
-        guard let imageURL = character.profilePicture else { return }
-        ImageController.image(forURL: imageURL, completion: completion)
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        update()
     }
 }

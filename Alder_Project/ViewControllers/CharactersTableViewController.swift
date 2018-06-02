@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import SDWebImage
 
 class CharactersTableViewController: UITableViewController {
 
+    // This was a property used to take in and display the content recieved from the server
     var characters = [Characters?]() {
         didSet {
             DispatchQueue.main.async {
@@ -21,18 +23,20 @@ class CharactersTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loadAllCharacters()
+        // Not calling this function because we've already stored the data, no need to keep calling it.
+        //loadAllCharacters()
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tableView.reloadData()
+    }
+    // Network call if you did not want to use the data that is stored in Core Data
     func loadAllCharacters() {
         CharacterController.shared.fetchCharacters { (characters) in
             self.characters = characters
         }
-    }
-    
-    func getImage(for character: Characters, completion: @escaping (UIImage?) -> Void) {
-        guard let imageURL = character.profilePicture else { return }
-        ImageController.image(forURL: imageURL, completion: completion)
     }
     
     // MARK: - Table view data source
@@ -43,27 +47,29 @@ class CharactersTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "characterCell", for: indexPath) as? CharacterTableViewCell else { return UITableViewCell() }
-
-        if let character = characters[indexPath.row] {
-    
+        
+        let character = CharacterController.shared.characters[indexPath.row]
+        
+        if let imageURL = character.profilePicture {
             cell.update(character: character)
             
-            getImage(for: character) { (image) in
-                DispatchQueue.main.async {
-                    cell.characterImage.image = image
-                }
+            // Making sure we go back on the main thread when updating the UI
+            DispatchQueue.main.async {
+                cell.characterImage.sd_setImage(with: URL(string: imageURL))
+                cell.characterImage.layer.masksToBounds = false
+                cell.characterImage.layer.cornerRadius = cell.characterImage.frame.height/2
+                cell.characterImage.clipsToBounds = true
             }
         }
         return cell
     }
     
     // MARK: - Navigation
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toDetailVC" {
             guard let destinationVC = segue.destination as? CharacterDetailViewController,
                 let indexPath = tableView.indexPathForSelectedRow else { return }
-            destinationVC.character = characters[indexPath.row]
+            destinationVC.character = CharacterController.shared.characters[indexPath.row]
         }
     }
 }
