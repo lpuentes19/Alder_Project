@@ -14,7 +14,7 @@ class CharactersTableViewController: UITableViewController {
     // Stored the cellIdentifier in a constant
     fileprivate let cellIdentifier = "characterCell"
     
-    // This was a property used to take in and display the content recieved from the server
+    // This was a property used to take in and display the content recieved from the server initially before storing data locally
     var characters = [Characters?]() {
         didSet {
             DispatchQueue.main.async {
@@ -26,8 +26,8 @@ class CharactersTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Not calling this function because we've already stored the data, no need to keep calling it.
-        //loadAllCharacters()
+        // Function checks to see if the data is stored locally, if not then it makes the network call, saves the data locally and then retrieves it from Core Data and displays it
+        loadAllCharacters()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,8 +37,12 @@ class CharactersTableViewController: UITableViewController {
     }
     // Network call if you did not want to use the data that is stored in Core Data
     func loadAllCharacters() {
-        CharacterController.shared.fetchCharacters { (characters) in
-            self.characters = characters
+        if CharacterController.shared.characters.count == 0 {
+            CharacterController.shared.fetchCharacters { (characters) in
+                self.characters = characters
+            }
+        } else {
+            print("Already saved data.")
         }
     }
     
@@ -65,6 +69,14 @@ class CharactersTableViewController: UITableViewController {
             }
         }
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let character = CharacterController.shared.characters[indexPath.row]
+            CharacterController.shared.delete(character: character)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
     }
     
     // MARK: - Navigation
