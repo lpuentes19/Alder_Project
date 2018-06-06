@@ -25,6 +25,8 @@ class CharactersTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Deleting the records in the Characters class using NSBatchRequest so that we can check for any updates and then save the new data we receive to NSPersistent Store
+        CharacterController.shared.delete()
         
         // Function checks to see if the data is stored locally, if not then it makes the network call, saves the data locally and then retrieves it from Core Data and displays it
         loadAllCharacters()
@@ -69,14 +71,6 @@ class CharactersTableViewController: UITableViewController {
             }
         }
         return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            let character = CharacterController.shared.characters[indexPath.row]
-            CharacterController.shared.delete(character: character)
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        }
     }
     
     // MARK: - Navigation

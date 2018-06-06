@@ -40,12 +40,11 @@ class CharacterController {
             }
         }
     }
-    // Deleting the object from the persistent store and saving the changes
-    func delete(character: Characters) {
-        let moc = CoreDataStack.context
-        moc.delete(character)
-        
-        saveToPersistentStorage()
+    // Deleting all records from the Characters Entity using NSBatchDelete Request which instead of loading every record into memory, a batch delete request directly affects one or more persistent stores
+    func delete() {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Characters")
+        let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        _ = try? CoreDataStack.context.execute(batchDeleteRequest)
     }
     // Fetching the saved objects from the persistent store
     func fetchIndividuals() -> [Characters] {
